@@ -28,21 +28,20 @@ const navObserver = new IntersectionObserver(entries => {
   }
 }, {rootMargin:'-10% 0px -65% 0px',threshold:0});
 $$('section[id]:not(#top)').forEach(section => navObserver.observe(section));
-const casSource = 'https://igsnrr.cas.cn/cbkx/kpyd/dlxj/202009/t20200910_5692705.html';
 const milestones = {
- '1911': {suffix:'年',place:'江苏 · 江阴青阳镇',title:'从江南出发，走向广阔世界。',body:'李旭旦出生于江苏江阴。他后来成为人文地理学家、区域地理学家与地理教育家，对人与土地的关系展开长期思考。',source:casSource},
- '1936': {suffix:'年',place:'英国 · 剑桥大学',title:'远行求学，打开地理的视野。',body:'李旭旦考取中英庚款奖学金，赴英国剑桥大学留学。求学与译介，使他持续接触世界地理学的思想与方法。',source:casSource},
- '1939': {suffix:'年',place:'中国 · 归国任教',title:'带着所学，回到自己的土地。',body:'留学后，李旭旦于1939年回国，继续投入地理研究与教育。他的研究主张将引进的思想与中国的实际问题相联系。',source:casSource},
- '1947': {suffix:'年',place:'学术研究 · 综合地理分区',title:'理解一个地方，需要多种目光。',body:'发表《中国地理区之划分》，将地貌、气候、水文、土壤、植被等自然要素，与人口、经济、民族、文化等人文要素结合，提出综合地理分区方案。',source:casSource},
- '1952': {suffix:'年后',place:'南京 · 南京师范学院',title:'一间课堂，延伸出新的道路。',body:'李旭旦到南京师范学院创建地理系，先后担任系主任、名誉系主任。在研究与教学之间，他让人文地理学的思考有了新的生长之地。',source:casSource},
- '1985': {suffix:'年',place:'学术留泽 · 继续阅读',title:'书页合上，求索仍在继续。',body:'李旭旦于1985年逝世。同年出版的《人文地理学概说》留下了他的学术思考。后来的研究者通过著作与纪念文章，继续回望他的贡献。',source:'https://www.ecsponline.com/goods.php?id=18445'}
+ '1911': {suffix:'年',place:'江苏 · 江阴青阳镇',title:'从江南出发，走向广阔世界。',body:'李旭旦出生于江苏江阴。他后来成为人文地理学家、区域地理学家与地理教育家，对人与土地的关系展开长期思考。'},
+ '1936': {suffix:'年',place:'英国 · 剑桥大学',title:'远行求学，打开地理的视野。',body:'李旭旦考取中英庚款奖学金，赴英国剑桥大学留学。求学与译介，使他持续接触世界地理学的思想与方法。'},
+ '1939': {suffix:'年',place:'中国 · 归国任教',title:'带着所学，回到自己的土地。',body:'留学后，李旭旦于1939年回国，继续投入地理研究与教育。他的研究主张将引进的思想与中国的实际问题相联系。'},
+ '1947': {suffix:'年',place:'学术研究 · 综合地理分区',title:'理解一个地方，需要多种目光。',body:'发表《中国地理区之划分》，将地貌、气候、水文、土壤、植被等自然要素，与人口、经济、民族、文化等人文要素结合，提出综合地理分区方案。'},
+ '1952': {suffix:'年后',place:'南京 · 南京师范学院',title:'一间课堂，延伸出新的道路。',body:'李旭旦到南京师范学院创建地理系，先后担任系主任、名誉系主任。在研究与教学之间，他让人文地理学的思考有了新的生长之地。'},
+ '1985': {suffix:'年',place:'学术留泽 · 继续阅读',title:'书页合上，求索仍在继续。',body:'李旭旦于1985年逝世。同年出版的《人文地理学概说》留下了他的学术思考。后来的研究者通过著作与纪念文章，继续回望他的贡献。'}
 };
 $$('[data-year]').forEach(button => button.addEventListener('click', () => {
  const item = milestones[button.dataset.year];
  $$('[data-year]').forEach(b => b.setAttribute('aria-pressed', String(b===button)));
  $('#timeline-year').replaceChildren(document.createTextNode(button.dataset.year));
  const suffix=document.createElement('small');suffix.textContent=item.suffix;$('#timeline-year').append(suffix);
- $('#timeline-place').textContent=item.place;$('#timeline-title').textContent=item.title;$('#timeline-description').textContent=item.body;$('#timeline-source').href=item.source;
+ $('#timeline-place').textContent=item.place;$('#timeline-title').textContent=item.title;$('#timeline-description').textContent=item.body;
  const panel=$('.timeline-detail');panel.classList.remove('changing');requestAnimationFrame(()=>panel.classList.add('changing'));
 }));
 const layers = { nature:true, settlement:false, connection:false };

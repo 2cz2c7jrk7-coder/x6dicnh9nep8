@@ -21,3 +21,8 @@ dialog{border:1px solid var(--line);background:var(--paper-light);color:var(--in
 @keyframes mist-drift{from{transform:translateX(-6%) translateY(2%);opacity:.5}to{transform:translateX(7%) translateY(-5%);opacity:.9}}
 @media(max-width:700px){.map-canvas{height:auto;aspect-ratio:1.16;min-height:285px}.hero-description{font-size:15px}.layer-toggles button{font-size:12px}.map-node{font-size:12px}.timeline-buttons button span{font-size:12px}.archive-entry div>p:last-child{font-size:15px}.hero-wash::after{left:-20%;right:-40%;top:53%}.insight-character{position:absolute;right:22px;top:18px;font-size:32px;line-height:1.2;margin:0;float:none;opacity:.7}.map-insight h3{margin-top:20px}}
 @media(prefers-reduced-motion:reduce){html:not(.js-enabled){scroll-behavior:auto}html:not(.js-enabled) *{animation:none!important;transition:none!important}}
+
+/* Repeated citations stay inside the exhibition; full links live in the archive. */
+.source-reference{white-space:nowrap;text-decoration:underline;text-underline-offset:.22em;margin:0 .2em}
+.timeline-copy p.timeline-references{font-size:12px;line-height:1.8;color:#aab9aa;margin-top:18px}
+.archive-entry:target{background:#f9f4e5;box-shadow:inset 3px 0 var(--red);padding-left:15px}
